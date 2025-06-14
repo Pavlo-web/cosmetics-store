@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Online cosmetics store</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Product catalog</a></li>
+                <li><a href="cart.html">Cart <span id="cart-count-header">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="controls">
+            <div class="sort-controls">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="default">By default</option>
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price-asc">Price (growth)</option>
+                    <option value="price-desc">Price (falling)</option>
+                </select>
+            </div>
+            <button id="open-cart">View the cart <span id="cart-count">0</span></button>
+        </div>
+
+        <div id="product-list" class="product-list">
+            <!-- Карточки товарів з’являться тут -->
+        </div>
+    </main>
+
+    <aside id="cart-sidebar" class="cart-sidebar">
+        <button id="close-cart">&times;</button>
+        <h2>Your cart</h2>
+        <ul id="cart-items">
+            <!-- Елементи кошика -->
+        </ul>
+        <a href="cart.html"><button id="go-to-cart">Go to cart</button></a>
+    </aside>
+
+    <footer>
+        <p>Author: Pavlo Onyshko. If something goes wrong - Please, let me know: pavloonisko36@gmail.com :)</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
