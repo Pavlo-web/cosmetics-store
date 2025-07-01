@@ -103,8 +103,8 @@ function sortProducts() {
     } else if (option === 'price-desc') {
         products.sort((a, b) => b.price - a.price);
     } else {
-        // default: можна або не змінювати порядок, або отримати початковий. 
-        // Я тут нічого не роблю (API поверне порядок).
+        // default: restore the original order from the API
+        products = [...originalProducts];
     }
     renderProducts();
 }
@@ -142,6 +142,7 @@ function renderCartPage() {
 
 // Головна логіка на завантаження сторінки
 let products = [];
+let originalProducts = [];
 
 if (productList) {
     fetch('https://dummyjson.com/products/category/beauty')
@@ -151,6 +152,7 @@ if (productList) {
         })
         .then(data => {
             products = data.products || [];
+            originalProducts = [...products];
             if (products.length === 0) {
                 productList.innerHTML = '<p>There are no products in the category.</p>';
             } else {
